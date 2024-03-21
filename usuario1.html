@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Aplicação Web</title>
+  <link rel="stylesheet" href="styles.css">
+  <script>
+    function preencherHoraAtual() {
+      var agora = new Date();
+      var hora = agora.getHours().toString().padStart(2, '0');
+      var minutos = agora.getMinutes().toString().padStart(2, '0');
+      var horaAtual = hora + ':' + minutos;
+      document.getElementById('hora_ponto').value = horaAtual;
+    }
+  </script>
+ </head>
+<body>
+  <div class="container">
+    <form action="armazenar_ponto.php" method="post" class="form-log">
+      <input type="hidden" name="id_usuario" value="usuario1">
+      <div class="tex-form">
+        <label for="tipo_ponto">Tipo de Ponto:</label>
+        <select id="tipo_ponto" name="tipo_ponto" required onchange="preencherHoraAtual()">
+          <option value="">Selecione o tipo de ponto</option>
+          <option value="entrada">Entrada</option>
+          <option value="saida">Saída</option>
+        </select>
+      </div>
+      <div class="tex-form">
+        <label for="hora_ponto">Hora:</label>
+        <input type="time" id="hora_ponto" name="hora_ponto" required readonly>
+      </div>
+      <button type="submit">Registrar Ponto</button>
+    </form>
+  </div>
+</body>
+</html>
