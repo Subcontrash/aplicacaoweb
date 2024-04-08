@@ -8,12 +8,9 @@ body {
     background-color: #c3c3c3;
 }
 
-#container {
-    max-width: 800px;
-    padding: 20px;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-    background-color: #f9f9f9;
+
+h2 {
+    margin-top: 0;
 }
 
 table {
